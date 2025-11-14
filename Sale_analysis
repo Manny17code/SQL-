@@ -1,0 +1,20 @@
+CREATE SCHEMA Website_traffic_analysis;
+
+USE Website_traffic_analysis;
+
+CREATE TABLE User_sessions (
+    Session_date DATE,
+    User_Id VARCHAR(50),
+    Traffic_source VARCHAR(100),
+    Location_country VARCHAR(50),
+    Session_duration FLOAT,
+    Is_bounced BOOLEAN,
+    Is_converted BOOLEAN
+);
+
+
+UPDATE user_sessions
+SET traffic_source = 'Direct / None'
+WHERE traffic_source IS NULL;
+
+
